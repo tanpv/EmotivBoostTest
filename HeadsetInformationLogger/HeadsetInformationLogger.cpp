@@ -141,14 +141,14 @@ BOOST_AUTO_TEST_CASE(TC01_GIVEN_Insight_headset_WHEN_connected_THEN_return_heads
 				BOOST_CHECK((IS_GetContactQuality(eState, IEE_CHAN_Pz) >= 0) && (IS_GetContactQuality(eState, IEE_CHAN_Pz) <= 4));
 				BOOST_CHECK((IS_GetContactQuality(eState, IEE_CHAN_T8) >= 0) && (IS_GetContactQuality(eState, IEE_CHAN_T8) <= 4));
 				BOOST_CHECK((IS_GetContactQuality(eState, IEE_CHAN_AF4) >= 0) && (IS_GetContactQuality(eState, IEE_CHAN_AF4) <= 4));
-				std::cout << '\r'<< std::fixed << std::setprecision(2) << systemUpTime << "         "
-					<< wirelessStrength << "         "
-					<< batteryLevel << "      "
-					<< IS_GetContactQuality(eState, IEE_CHAN_AF3) << "     "
-					<< IS_GetContactQuality(eState, IEE_CHAN_T7) <<	"    "
-					<< IS_GetContactQuality(eState, IEE_CHAN_Pz) << "    "
-					<< IS_GetContactQuality(eState, IEE_CHAN_T8) << "    "
-					<< IS_GetContactQuality(eState, IEE_CHAN_AF4);
+				//std::cout << '\r'<< std::fixed << std::setprecision(2) << systemUpTime << "         "
+				//	<< wirelessStrength << "         "
+				//	<< batteryLevel << "      "
+				//	<< IS_GetContactQuality(eState, IEE_CHAN_AF3) << "     "
+				//	<< IS_GetContactQuality(eState, IEE_CHAN_T7) <<	"    "
+				//	<< IS_GetContactQuality(eState, IEE_CHAN_Pz) << "    "
+				//	<< IS_GetContactQuality(eState, IEE_CHAN_T8) << "    "
+				//	<< IS_GetContactQuality(eState, IEE_CHAN_AF4);
 			}
 		}
 
