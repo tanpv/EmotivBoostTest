@@ -270,7 +270,7 @@ BOOST_FIXTURE_TEST_SUITE (ACTIVE_EEG_ONLY, Fixture)
 //
 //BOOST_FIXTURE_TEST_CASE(TC04_GIVEN_no_license_activated_WHEN_call_PM_function_THEN_data_update_per_10_seconds, Fixture) {}
 
-BOOST_FIXTURE_TEST_CASE(TC05_GIVEN_valid_EEG_license_WHEN_activate_THEN_successful, Fixture) {
+BOOST_FIXTURE_TEST_CASE(TC05_GIVEN_no_license_WHEN_not_activated_THEN_user_can_use_prime_features, Fixture) {
     // TODO: Insert valid EEG only license here
  //   std::string EEGLicense {"6bbee6b4-b1ba-4ac4-8f27-bc49dcf8cfc1"};
  //   assert(EEGLicense != ""); // Stop test if EEGLicense is empty
