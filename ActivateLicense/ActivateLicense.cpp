@@ -25,7 +25,6 @@
 #include "EmotivLicense.h"
 #include <EmotivCloudClient.h>
 
-
 /**
 * License keys:
 */
@@ -45,7 +44,7 @@ std::string const password = "3Motiv8ed";
 int userCloudID = -1;
 
 std::string convertEpochToTime(time_t epochTime, std::string format) {
-	if (format == "") {
+	if(format == "") {
 		format = "%Y-%m-%d %H:%M:%S";
 	}
 
@@ -69,7 +68,7 @@ void printLicenseInformation(IEE_LicenseInfos_t& licenseInfos) {
 	std::cout << "Total quota used    : " << licenseInfos.usedQuota << std::endl;
 	std::cout << std::endl;
 
-	switch (licenseInfos.scopes) {
+	switch(licenseInfos.scopes) {
 	case IEE_EEG:
 		licenseType = IEE_LicenseType_t::IEE_EEG;
 
@@ -120,8 +119,6 @@ struct Fixture {
 
 		std::cout << "FIXTURE DESTROY - User Cloud ID = " << userCloudID << "\n";
 	}
-
-
 };
 
 BOOST_FIXTURE_TEST_SUITE(ACTIVE_LICENSE, Fixture)

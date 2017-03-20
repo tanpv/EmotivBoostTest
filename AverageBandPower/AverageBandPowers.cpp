@@ -76,7 +76,7 @@ struct Fixture {
 	}
 	EmoEngineEventHandle    eEvent;
 	EmoStateHandle          eState;
-
+		
 };
 
 //define and bind suite to fixture at one macrco
