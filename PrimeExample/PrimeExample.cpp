@@ -264,13 +264,13 @@ BOOST_FIXTURE_TEST_SUITE (ACTIVE_EEG_ONLY, Fixture)
 //    BOOST_CHECK_MESSAGE(IEE_ActivateLicense(EEGLicense.c_str(), 0) != EDK_OK, "IEE_ActivateLicense failed");
 //}
 
-//BOOST_FIXTURE_TEST_CASE(TC03_GIVEN_no_license_activated_WHEN_call_EEG_function_THEN_data_update_per_10_seconds, Fixture) {
+//BOOST_FIXTURE_TEST_CASE(TC03_GIVEN_no_license_activated_WHEN_call_EEG_function_THEN_user_fail_to_get_data, Fixture) {
 //	
 //}
 //
 //BOOST_FIXTURE_TEST_CASE(TC04_GIVEN_no_license_activated_WHEN_call_PM_function_THEN_data_update_per_10_seconds, Fixture) {}
 
-BOOST_FIXTURE_TEST_CASE(TC05_GIVEN_no_license_WHEN_not_activated_THEN_user_can_use_prime_features, Fixture) {
+BOOST_FIXTURE_TEST_CASE(TC05_GIVEN_no_license_WHEN_not_activated_THEN_data_update_per_10_seconds, Fixture) {
     // TODO: Insert valid EEG only license here
  //   std::string EEGLicense {"6bbee6b4-b1ba-4ac4-8f27-bc49dcf8cfc1"};
  //   assert(EEGLicense != ""); // Stop test if EEGLicense is empty
@@ -284,7 +284,7 @@ BOOST_FIXTURE_TEST_CASE(TC05_GIVEN_no_license_WHEN_not_activated_THEN_user_can_u
 
 //BOOST_FIXTURE_TEST_CASE(TC06_GIVEN_activated_EEG_only_license_WHEN_call_PM_function_THEN_data_update_per_10_seconds, Fixture) {}
 //
-//BOOST_FIXTURE_TEST_CASE(TC07_GIVEN_activated_EEG_only_license_WHEN_call_EEG_function_THEN_unable_to_get_data, Fixture) {}
+//BOOST_FIXTURE_TEST_CASE(TC07_GIVEN_activated_EEG_only_license_WHEN_call_EEG_function_THEN_data_update_per_0.5_seconds, Fixture) {}
 //
 //BOOST_FIXTURE_TEST_CASE(TC08_GIVEN_activated_EEG_PM_license_WHEN_call_PM_function_THEN_data_update_per_0.5_seconds, Fixture) {}
 //
