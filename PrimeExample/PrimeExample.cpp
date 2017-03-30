@@ -77,9 +77,9 @@ void logPerformanceMetricScore(unsigned int userID, EmoStateHandle eState) {
 	std::cout << userID << ",";
 
 	// PerformanceMetric results
-	double rawScore = 0;
-	double minScale = 0;
-	double maxScale = 0;
+	double rawScore    = 0;
+	double minScale    = 0;
+	double maxScale    = 0;
 	double scaledScore = 0;
 	IS_PerformanceMetricGetStressModelParams(eState, &rawScore, &minScale, &maxScale);
 	std::cout << rawScore << ",";
@@ -148,9 +148,7 @@ void logPerformanceMetricScore(unsigned int userID, EmoStateHandle eState) {
 	std::cout << std::endl;
 }
 
-
-
-inline void getEEGData(EmoEngineEventHandle eEvent, DataHandle hData) {
+void getEEGData(EmoEngineEventHandle eEvent, DataHandle hData) {
 	int result = IEE_DataUpdateHandle(0, hData);
 
 	unsigned int nSamplesTaken = 0;
@@ -170,7 +168,7 @@ inline void getEEGData(EmoEngineEventHandle eEvent, DataHandle hData) {
 	std::this_thread::sleep_for(std::chrono::milliseconds(10));
 }
 
-inline void getPMData(EmoEngineEventHandle eEvent, EmoStateHandle sState, int userID) {
+void getPMData(EmoEngineEventHandle eEvent, EmoStateHandle sState, int userID) {
 	IEE_EmoEngineEventGetEmoState(eEvent, sState);
 	logPerformanceMetricScore(userID, sState);
 }
@@ -204,7 +202,6 @@ int emotivEngine(std::string primeType) {
 			}
 			if(userAdded == 0 && eventType == IEE_EmoStateUpdated) {
 				headsetTime = IS_GetTimeFromStart(eEvent);
-				
 				if(primeType == "EEG")
 					getEEGData(eEvent, hData);
 				else
