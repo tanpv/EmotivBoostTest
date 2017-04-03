@@ -91,7 +91,7 @@ bool verifyProfile(const char * downloadFile, const char * uploadFile, long long
 
 BOOST_AUTO_TEST_SUITE(EMOTIV_CLOUD_PROFILE)
 
-BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_correct_EmotivID_WHEN_access_to_Emotiv_cloud_THEN_user_fail_to_login) {
+BOOST_AUTO_TEST_CASE(PRO_265_GIVEN_correct_EmotivID_WHEN_access_to_Emotiv_cloud_THEN_user_fail_to_login) {
 	int errorCode;
 	BOOST_CHECK_MESSAGE(IEE_EngineConnect() == EDK_OK, "ERROR: IEE_EngineConnect failed");
 	errorCode = EC_Connect();
@@ -103,7 +103,7 @@ BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_correct_EmotivID_WHEN_access_to_Emotiv_cloud_
 	//listCloudProfile(userCloudID);
 }
 
-BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_local_valid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_able_to_upload) {
+BOOST_AUTO_TEST_CASE(PRO_265_GIVEN_local_valid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_able_to_upload) {
 	int errorCode;
 	errorCode = EC_UploadProfileFile(userCloudID, profileName.c_str(), localProfile.c_str(), TRAINING, true);
 	BOOST_CHECK_MESSAGE(errorCode == EDK_OK, "EC_UploadProfileFile failed");
@@ -112,13 +112,13 @@ BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_local_valid_profile_WHEN_accessed_to_Emotiv_c
 }
 
 
-BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_invalid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_fail_to_download) {
+BOOST_AUTO_TEST_CASE(PRO_265_GIVEN_invalid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_fail_to_download) {
 	std::string cloudProfile = "_invalid_profile_";
 	BOOST_CHECK_MESSAGE(EC_GetProfileId(userCloudID, cloudProfile.c_str(), &profileID) != EDK_OK, "EC_GetProfileId error");
 	BOOST_CHECK_MESSAGE(EC_DownloadProfileFile(userCloudID, profileID, localProfile.c_str()) != EDK_OK, "EC_DownloadProfileFile error");
 }
 
-BOOST_AUTO_TEST_CASE(PRO-265_GIVEN_valid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_able_to_download) {
+BOOST_AUTO_TEST_CASE(PRO_265_GIVEN_valid_profile_WHEN_accessed_to_Emotiv_cloud_THEN_user_able_to_download) {
 	int errorCode;
 	std::string cloudProfileName = "test1";
 	errorCode = EC_GetProfileId(userCloudID, cloudProfileName.c_str(), &profileID);
