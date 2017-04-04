@@ -252,12 +252,14 @@ function readXMLFile(allTestCasesResult, fileName, callback) {
 
 /* This function gets the xml file from source folder */
 function getXMLFile(allTestCasesResult, callback) {
-    var fileName = '';
+    var fileName = '',
+        location = '';
     if (process.argv[3] === "CLO") {
         fileName = 'out.xml';
         readXMLFile(allTestCasesResult, fileName, callback);
     } else {
-        glob("../result*.xml", function (er, files) {
+        location = config.xml_location + "result*.xml";
+        glob(location, function (er, files) {
             fileName = files[0];
             readXMLFile(allTestCasesResult, fileName, callback);
         });
