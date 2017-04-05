@@ -259,8 +259,10 @@ function getXMLFile(allTestCasesResult, callback) {
         readXMLFile(allTestCasesResult, fileName, callback);
     } else {
         location = config.xml_location + "result*.xml";
+        console.log("Location :" + location);
         glob(location, function (er, files) {
             fileName = files[0];
+            console.log("\nFileName : " + fileName);
             readXMLFile(allTestCasesResult, fileName, callback);
         });
     }
