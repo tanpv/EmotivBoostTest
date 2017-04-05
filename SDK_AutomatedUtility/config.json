@@ -4,5 +4,5 @@
     "base_url" : "https://jira.emotivcloud.com",
     "version" : "1.0",
     "owner" : "tanpv",
-    "xml_location" : "C:/Jenkins/wrkspace/EDK_Auto_Test"
+    "xml_location" : "C:/Jenkins/workspace/EDK_Auto_Test"
 }

@@ -68,7 +68,7 @@ function getAllTestCases(callback) {
 }
 
 app.listen(4000, function () {
-    console.log('Emotiv app listening on port 4000!');
+    console.log('Utility listening on jira.emotivcloud.com!');
     getAllTestCases(function (response) {
         console.log("\nThe Test Run ID is: " + JSON.stringify(response));
         process.exit(0);
