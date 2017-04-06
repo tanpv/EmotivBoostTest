@@ -60,7 +60,7 @@ function getAllTestCases(callback) {
                 });
             } else {
                 console.log(body);
-                process.exit(0);
+                process.exit(1);
 
             }
         });

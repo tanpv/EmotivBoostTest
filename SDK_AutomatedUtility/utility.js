@@ -86,7 +86,7 @@ function postTestCaseRequest(obj, result) {
                 result.key = body.key;
             } else {
                 console.log(body);
-                process.exit(0);
+                process.exit(1);
             }
         });
 }
@@ -176,7 +176,7 @@ function getAutomatedTestCases(callback) {
                 callback(tempResult);
             } else {
                 console.log(body);
-                process.exit(0);
+                process.exit(1);
 
             }
         });
@@ -202,7 +202,7 @@ function createTestRun(data, callback) {
                 callback(body);
             } else {
                 console.log(body);
-                process.exit(0);
+                process.exit(1);
             }
         });
 }
@@ -240,12 +240,12 @@ function readXMLFile(allTestCasesResult, fileName, callback) {
                     });
                 } else {
                     console.log(err);
-                    process.exit(0);
+                    process.exit(1);
                 }
             });
         } else {
             console.log(err);
-            process.exit(0);
+            process.exit(1);
         }
     });
 }
@@ -259,10 +259,9 @@ function getXMLFile(allTestCasesResult, callback) {
         readXMLFile(allTestCasesResult, fileName, callback);
     } else {
         location = config.xml_location + "result*.xml";
-        console.log("Location :" + location);
         glob(location, function (er, files) {
             fileName = files[0];
-            console.log("\nFileName : " + fileName);
+            console.log("\n XML FileName : " + fileName);
             readXMLFile(allTestCasesResult, fileName, callback);
         });
     }
